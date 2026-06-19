@@ -164,15 +164,30 @@
   .footer-bottom a:hover { color: var(--white); }
 
   @media (max-width: 960px) {
-    nav { padding: 0 20px; } .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 56px 24px 40px; } .hero-right { display: none; }
-    .slogan-band { padding: 16px 24px; flex-direction: column; gap: 6px; text-align: center; }
-    .stats { grid-template-columns: 1fr; padding: 40px 24px; gap: 24px; }
-    section { padding: 60px 24px; } .for-who { padding: 60px 24px; }
+    nav { padding: 0 16px; height: 56px; }
+    .nav-logo img { height: 32px; }
+    .nav-logo-sub { display: none; }
+    .nav-links { display: none; }
+    .lang-switch-en, .lang-switch-kr { padding: 5px 10px; font-size: 11px; }
+    .nav-cta { padding: 7px 14px; font-size: 12px; }
+    .hero { margin-top: 56px; grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 40px 24px 40px; text-align: center; align-items: center; }
+    .hero-logo img { height: 80px; }
+    .hero-badge { font-size: 10px; }
+    .hero-title { font-size: 34px; }
+    .hero-slogan { font-size: 10px; }
+    .hero-sub { font-size: 14px; }
+    .hero-buttons { justify-content: center; }
+    .hero-right { display: none; }
+    .slogan-band { padding: 14px 24px; flex-direction: column; gap: 4px; text-align: center; }
+    .slogan-main { font-size: 13px; }
+    .slogan-sub { font-size: 11px; letter-spacing: 1px; }
+    .stats { grid-template-columns: 1fr; padding: 32px 24px; gap: 20px; }
+    section { padding: 56px 24px; } .for-who { padding: 56px 24px; }
     .for-who-grid, .how-grid, .gig-grid { grid-template-columns: 1fr; }
     .feat-grid { grid-template-columns: 1fr 1fr; }
-    .download { padding: 60px 24px; }
+    .download { padding: 56px 24px; }
+    .dl-badges { gap: 24px; }
     footer { padding: 40px 24px; } .footer-top { grid-template-columns: 1fr; gap: 28px; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
   }
@@ -182,7 +197,7 @@
 
 <nav>
   <a class="nav-logo" href="#">
-    <img src="logo-header.jpg" alt="VITAL 로고">
+    <img src="logo-header.png" alt="VITAL 로고">
     <span class="nav-logo-sub">검증된 강사, 모든 곳으로</span>
   </a>
   <div class="nav-right">
@@ -204,7 +219,7 @@
 <section class="hero">
   <div class="hero-left">
     <div class="hero-logo">
-      <img src="logo-header.jpg" alt="VITAL 로고">
+      <img src="logo-header.png" alt="VITAL 로고">
     </div>
     <div class="hero-badge">한국 강사 채용 플랫폼</div>
     <h1 class="hero-title">검증된 강사를<br><span>쉽고 빠르게</span><br>연결하세요</h1>
