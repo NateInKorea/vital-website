@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -22,7 +22,7 @@
     justify-content: space-between; padding: 0 40px; height: 64px;
     border-bottom: 3px solid var(--red);
   }
-  .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+  .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
   .nav-logo img { height: 36px; width: auto; }
   .nav-logo-sub { color: rgba(255,255,255,0.4); font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; display: block; }
   .hero-logo { margin-bottom: 28px; }
@@ -31,10 +31,10 @@
   .nav-links { display: flex; gap: 28px; }
   .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 600; transition: color 0.2s; }
   .nav-links a:hover { color: var(--white); }
-  .lang-switch { display: flex; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 6px; overflow: hidden; text-decoration: none; }
+  .lang-switch { display: flex; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 6px; overflow: hidden; text-decoration: none; flex-shrink: 0; }
   .lang-switch-en { padding: 6px 12px; font-size: 12px; font-weight: 700; background: var(--white); color: var(--navy-dark); }
   .lang-switch-kr { padding: 6px 12px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); }
-  .nav-cta { background: var(--red); color: var(--white); padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; transition: background 0.2s; }
+  .nav-cta { background: var(--red); color: var(--white); padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
   .nav-cta:hover { background: var(--red-dark); }
 
   .hero { margin-top: 64px; background: linear-gradient(135deg, #000d2e 0%, #001440 40%, #002060 70%, #003478 100%); min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
@@ -167,12 +167,14 @@
   .footer-bottom a:hover { color: var(--white); }
 
   @media (max-width: 960px) {
-    nav { padding: 0 12px; height: 56px; }
+    nav { padding: 0 16px; height: 56px; }
     .nav-logo img { height: 30px; }
     .nav-logo-sub { display: none; }
     .nav-links { display: none; }
-    .nav-cta { padding: 6px 12px; font-size: 11px; }
-    .lang-switch-en, .lang-switch-kr { padding: 5px 8px; font-size: 11px; }
+    .nav-right { gap: 8px; }
+    .lang-switch-en { padding: 5px 8px; font-size: 11px; }
+    .lang-switch-kr { padding: 5px 8px; font-size: 11px; }
+    .nav-cta { padding: 7px 12px; font-size: 11px; }
     .hero { margin-top: 56px; grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 40px 24px 40px; text-align: center; align-items: center; }
     .hero-logo img { height: 80px; }
