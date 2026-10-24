@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>VITAL – Reset Password</title>
+<style>
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#002060; font-family:-apple-system, 'Noto Sans KR', Arial, sans-serif; padding:24px; box-sizing:border-box; }
+  .card { background:#fff; border-radius:24px; padding:36px 28px; max-width:420px; width:100%; text-align:center; }
+  .card img { width:120px; margin-bottom:16px; }
+  h1 { color:#002060; font-size:24px; margin:8px 0 4px; }
+  h2 { color:#6B7BA8; font-size:16px; margin:0 0 20px; font-weight:600; }
+  p { color:#444; font-size:15px; line-height:1.6; margin:0 0 12px; }
+  .btn { display:block; background:#002060; color:#fff; text-decoration:none; font-weight:700; font-size:18px; padding:16px; border-radius:12px; margin:24px 0 16px; }
+  .small { color:#999; font-size:13px; }
+  .error { color:#C60C30; }
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="logo-header.jpg" alt="VITAL">
+  <h1>Reset Your Password</h1>
+  <h2>비밀번호 재설정</h2>
+  <div id="ok">
+    <p>Tap the button below to open VITAL and choose a new password.</p>
+    <p>아래 버튼을 눌러 VITAL 앱을 열고 새 비밀번호를 설정하세요.</p>
+    <a id="openBtn" class="btn" href="#">Open VITAL App 앱 열기</a>
+    <p class="small">If nothing happens, make sure VITAL is installed and tap the button again. Reset links work once and expire after a short time.<br>아무 반응이 없으면 VITAL 앱이 설치되어 있는지 확인하고 다시 눌러주세요. 재설정 링크는 한 번만 사용할 수 있으며 일정 시간이 지나면 만료됩니다.</p>
+  </div>
+  <div id="bad" style="display:none">
+    <p class="error">This link is not valid. Please request a new reset email from the app.</p>
+    <p class="error">유효하지 않은 링크입니다. 앱에서 재설정 이메일을 다시 요청해주세요.</p>
+  </div>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var tokenHash = params.get('token_hash');
+  if (!tokenHash) {
+    document.getElementById('ok').style.display = 'none';
+    document.getElementById('bad').style.display = 'block';
+  } else {
+    var deepLink = 'vitalkorea://reset-password?token_hash=' + encodeURIComponent(tokenHash) + '&type=recovery';
+    document.getElementById('openBtn').href = deepLink;
+    setTimeout(function () { window.location.href = deepLink; }, 600);
+  }
+</script>
+</body>
+</html>
